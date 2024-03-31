@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">TeachersApp</string>
+    <string name="detailed_view_balance_label">Balance: \%1$d lessons</string>
+    <string name="detailed_view_duration_label">Duration: \%1$d </string>
+    <string name="title_activity_list">ListActivity</string>
+    <string name="btn_add_new_lesson">Add new lesson</string>
+    <string name="title_activity_add_new_lesson">AddNewLessonActivity</string>
+    <string name="lesson_id_input_hint">Enter lesson id</string>
+    <string name="lesson_datetime_input_hint">Enter lesson Datetime</string>
+    <string name="lesson_lessonType_input_hint">Enter lesson type</string>
+    <string name="lesson_duration_input_hint">Enter lesson duration</string>
+    <string name="lesson_balance_input_hint">Enter students balance</string>
+    <string name="lesson_studentName_input_hint">Enter students Name</string>
+    <string name="save_btn_text">Save</string>
+    <string name="profile_page_placeholder">Player will be here</string>
+    <string name="saved_success_msg">Saved</string>
+    <string name="saved_fail_msg">Failed to save</string>
+    <string name="title_activity_add_new">AddNewActivity</string>
+    <string name="no_file_selected_yet">No File Selected yet !</string>
+    <string name="no_pdf_file_selected_yet">No PDF File Selected yet !</string>
+
+</resources>

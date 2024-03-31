@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1050734849055",
+    "project_id": "pdf-firebase-40c3a",
+    "storage_bucket": "pdf-firebase-40c3a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1050734849055:android:378c5ba33c3e132e19f92a",
+        "android_client_info": {
+          "package_name": "com.example.teachersapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-ZCj2He6A3dtzRTjxypV9oklXdESe6EU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
