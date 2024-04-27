@@ -7,7 +7,7 @@ import com.example.teachersapp.models.Lesson
 
 
 class LessonRepository{
-        suspend fun getLessonList(): List<Lesson>{
+    suspend fun getLessonList(): List<Lesson>{
         val lessons = mutableListOf<Lesson>()
         try {
 

@@ -1,4 +1,4 @@
-package com.example.teachersapp.addnew
+package com.example.teachersapp.edtiLesson
 
 import android.content.Intent
 import androidx.compose.foundation.background
@@ -42,91 +42,76 @@ import com.example.teachersapp.models.Lesson
 import java.time.Duration
 
 @Composable
-fun AddNewLesson(
-    onNewLessonAdded: (Lesson) -> Unit,
-    viewModel: AddNewLessonViewModel= AddNewLessonViewModel(LessonRepository())
+fun EditLesson(
+    lesson: Lesson?,
+    onLessonEdited: (Lesson) -> Unit,
 ){
-    val context = LocalContext.current
-    val id = remember {
-        mutableStateOf("")
-    }
-    val studentName = remember {
-        mutableStateOf("")
-    }
-    val lessonType = remember {
-        mutableStateOf("")
-    }
-    val duration = remember {
-        mutableStateOf("")
-    }
-    val dateTime = remember {
-        mutableStateOf("")
-    }
-    val response by viewModel.insertResponseLiveData.observeAsState()
-    Box(modifier = Modifier.fillMaxSize()) {
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(color = Color.White)
-                .padding(16.dp)
-                .verticalScroll(rememberScrollState())
-        ) {
-            CreateNewLessonPageTitle()
-            IdInput(id = id.value, onIdChange = { id.value = it })
-            Spacer(Modifier.height(16.dp))
-            StudentNameInput(
-                studentName = studentName.value,
-                onStudentNameChange = { studentName.value = it })
-            Spacer(Modifier.height(16.dp))
-            LessonTypeInput(
-                lessonType = lessonType.value,
-                onLessonTypeChange = { lessonType.value = it })
-            Spacer(Modifier.height(16.dp))
-            DurationTypeInput(
-                duration = duration.value,
-                onDurationChange = { duration.value = it })
-            Spacer(Modifier.height(16.dp))
-            DateTimeInput(
-                dateTime = dateTime.value,
-                onDateTimeChange = { dateTime.value = it })
-            Spacer(Modifier.height(16.dp))
-
-
-            AddNewButton {
-                onNewLessonAdded(
-                    Lesson(
-                        id.value,
-                        studentName.value,
-                        lessonType.value,
-                        dateTime.value,
-                        duration.value
-                    )
-                )
-            }
+    if (lesson != null) {
+        val id = remember {
+            mutableStateOf(lesson.Id)
+        }
+        val studentName = remember {
+            mutableStateOf(lesson.StudentName)
+        }
+        val lessonType = remember {
+            mutableStateOf(lesson.LessonType)
+        }
+        val duration = remember {
+            mutableStateOf(lesson.Duration)
+        }
+        val dateTime = remember {
+            mutableStateOf(lesson.DateTime)
         }
 
-        if (response != null) {
-            Text(
+        Box(modifier = Modifier.fillMaxSize()) {
+            Column(
                 modifier = Modifier
-                    .padding(20.dp)
-                    .align(Alignment.Center),
-                fontSize = 19.sp,
-                text = if (response!!.status == "OK") stringResource(id = R.string.saved_success_msg)
-                else stringResource(id = R.string.saved_fail_msg)
-            )
+                    .fillMaxWidth()
+                    .background(color = Color.White)
+                    .padding(16.dp)
+                    .verticalScroll(rememberScrollState())
+            ) {
+                EditLessonPageTitle()
+                IdInput(id = id.value, onIdChange = { id.value = it })
+                Spacer(Modifier.height(16.dp))
+                StudentNameInput(
+                    studentName = studentName.value,
+                    onStudentNameChange = { studentName.value = it })
+                Spacer(Modifier.height(16.dp))
+                LessonTypeInput(
+                    lessonType = lessonType.value,
+                    onLessonTypeChange = { lessonType.value = it })
+                Spacer(Modifier.height(16.dp))
+                DurationTypeInput(
+                    duration = duration.value,
+                    onDurationChange = { duration.value = it })
+                Spacer(Modifier.height(16.dp))
+                DateTimeInput(
+                    dateTime = dateTime.value,
+                    onDateTimeChange = { dateTime.value = it })
+                Spacer(Modifier.height(16.dp))
 
-            if (response!!.status == "OK") {
-                context.startActivity(Intent(context, ListActivity::class.java))
+
+                AddNewButton {
+                    onLessonEdited(
+                        Lesson(
+                            id.value,
+                            studentName.value,
+                            lessonType.value,
+                            dateTime.value,
+                            duration.value
+                        )
+                    )
+                }
             }
         }
     }
-
 }
 @Composable
-private fun CreateNewLessonPageTitle() {
+private fun EditLessonPageTitle() {
     Text(
         modifier = Modifier.fillMaxWidth(),
-        text = stringResource(id = R.string.title_activity_add_new_lesson),
+        text = stringResource(id = R.string.title_activity_edit_lesson),
         color = Color.Black,
         fontSize = 26.sp,
         fontFamily = FontFamily.Serif,

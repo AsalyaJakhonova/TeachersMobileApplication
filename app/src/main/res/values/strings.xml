@@ -18,5 +18,6 @@
     <string name="title_activity_add_new">AddNewActivity</string>
     <string name="no_file_selected_yet">No File Selected yet !</string>
     <string name="no_pdf_file_selected_yet">No PDF File Selected yet !</string>
+    <string name="title_activity_edit_lesson">Edit Lesson!</string>
 
 </resources>

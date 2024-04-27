@@ -1,7 +1,9 @@
 package com.example.teachersapp.detailedView
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.material3.Divider
 import androidx.compose.material3.Text
@@ -20,13 +22,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.materialIcon
+import androidx.compose.material3.Button
+import com.example.teachersapp.models.Lesson
 
 @Composable
 fun DetailedView(
-    lessonId: String,
-    viewModel: DetailedViewModel = DetailedViewModel(lessonId, LessonRepository())
+    lesson: Lesson?,
+    onDeleteClick: () -> Unit,
+    onEditClick: () -> Unit
 ){
-    val lesson by viewModel.lessonLiveData.observeAsState()
     if (lesson != null) {
         Column (modifier = Modifier
             .fillMaxSize()
@@ -44,7 +49,14 @@ fun DetailedView(
             if (lesson!!.Duration != null) {
                 Duration(duration = lesson!!.Duration!!)
             }
-
+            Row() {
+                Button(onClick = { onDeleteClick() }) {
+                    Text("Delete")
+                }
+                Button(onClick = { onEditClick() }) {
+                    Text("Edit")
+                }
+            }
         }
     }
 }
