@@ -67,6 +67,19 @@ class ListActivity : ComponentActivity() {
                                     NavigationBarItem(
                                         icon = {
                                             Icon(
+                                                Icons.Filled.List,
+                                                contentDescription = "Students"
+                                            )
+                                        },
+                                        label = { Text(text = "Students") },
+                                        selected = false,
+                                        onClick = {
+                                            navController.navigate(Screens.StudentListScren.route);
+                                        },
+                                    )
+                                    NavigationBarItem(
+                                        icon = {
+                                            Icon(
                                                 Icons.Filled.Add,
                                                 contentDescription = "Add Lesson"
                                             )
@@ -75,6 +88,19 @@ class ListActivity : ComponentActivity() {
                                         selected = false,
                                         onClick = {
                                             navController.navigate("addNew");
+                                        },
+                                    )
+                                    NavigationBarItem(
+                                        icon = {
+                                            Icon(
+                                                Icons.Filled.Add,
+                                                contentDescription = "Add Student"
+                                            )
+                                        },
+                                        label = { Text(text = "Add Student") },
+                                        selected = false,
+                                        onClick = {
+                                            navController.navigate("addNewStudent");
                                         },
                                     )
                                     NavigationBarItem(

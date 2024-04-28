@@ -4,13 +4,25 @@
     <string name="detailed_view_duration_label">Duration: \%1$d </string>
     <string name="title_activity_list">ListActivity</string>
     <string name="btn_add_new_lesson">Add new lesson</string>
-    <string name="title_activity_add_new_lesson">AddNewLessonActivity</string>
+    <string name="btn_add_new_student">Add new student</string>
+    <string name="title_activity_add_new_lesson">Add New Lesson</string>
+    <string name="title_activity_add_new_student">Add New Student</string>
     <string name="lesson_id_input_hint">Enter lesson id</string>
+    <string name="studentedit_id_input_hint">Enter student id</string>
+    <string name="student_id_input_hint">Enter student id</string>
     <string name="lesson_datetime_input_hint">Enter lesson Datetime</string>
+    <string name="studentedit_course_input_hint">Enter course</string>
+    <string name="student_course_input_hint">Enter course</string>
     <string name="lesson_lessonType_input_hint">Enter lesson type</string>
+    <string name="studentedit_age_input_hint">Enter age</string>
+    <string name="student_age_input_hint">Enter age</string>
     <string name="lesson_duration_input_hint">Enter lesson duration</string>
+    <string name="studentedit_phoneNumber_input_hint">Enter phone number</string>
+    <string name="student_phoneNumber_input_hint">Enter phone number</string>
     <string name="lesson_balance_input_hint">Enter students balance</string>
     <string name="lesson_studentName_input_hint">Enter students Name</string>
+    <string name="studentedit_Name_input_hint">Enter students Name</string>
+    <string name="student_Name_input_hint">Enter Name</string>
     <string name="save_btn_text">Save</string>
     <string name="profile_page_placeholder">Player will be here</string>
     <string name="saved_success_msg">Saved</string>
@@ -19,5 +31,6 @@
     <string name="no_file_selected_yet">No File Selected yet !</string>
     <string name="no_pdf_file_selected_yet">No PDF File Selected yet !</string>
     <string name="title_activity_edit_lesson">Edit Lesson!</string>
+    <string name="title_activity_edit_student">Edit Student!</string>
 
 </resources>
